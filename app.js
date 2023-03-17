@@ -1,4 +1,5 @@
 const loginForm = document.getElementById('login-form');
+const checkbox = document.getElementById('terms');
 
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault(); // Prevent the default form submission behavior
@@ -8,6 +9,7 @@ loginForm.addEventListener('submit', (event) => {
   const password = loginForm.password.value;
   
   // Check if the email and password are correct (this is just an example)
+  if(checkbox.checked){
   if (email === 'admin@email.com' && password === 'password') {
     // Redirect the user to the admin page
     window.location.href = 'min_page.html';
@@ -15,4 +17,4 @@ loginForm.addEventListener('submit', (event) => {
     // Redirect the user to the main page
     window.location.href = 'index.html';
   }
-});
+}});
