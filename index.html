@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <title>Navigation Menu</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      .user-email {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    </style>
   </head>
-  <body> 
+  <body>
     <nav class="navigation">
       <ul>
         <li><a href="#">Home</a></li>
@@ -19,9 +28,19 @@
         </span>
       </button>
     </nav>
+    <div id="user-email" class="user-email"></div>
     <div class="footer">
       Designed by ChatGPT
     </div>
+    <script>
+      // Get the email from the local storage
+      const userEmail = localStorage.getItem('userEmail');
+
+      // Display the email in the specified element
+      if (userEmail) {
+        document.getElementById('user-email').textContent = `Logged in as: ${userEmail}`;
+      }
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -18,3 +18,8 @@ if (cookieValue) {
   usernameDisplay.textContent = `Welcome, ${cookieValue}!`;
   document.body.appendChild(usernameDisplay);
 }
+// Find the HTML element with the ID 'messageContainer'
+const messageContainer = document.getElementById('messageContainer');
+
+// Set the content of the messageContainer
+messageContainer.innerHTML = 'Hello, this is a message displayed using JavaScript!';

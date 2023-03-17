@@ -15,6 +15,7 @@ loginForm.addEventListener('submit', (event) => {
     window.location.href = 'min_page.html';
   } else {
     // Redirect the user to the main page
+    localStorage.setItem('userEmail', email);
     window.location.href = 'index.html';
   }
 }});
