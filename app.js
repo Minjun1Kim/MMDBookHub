@@ -7,7 +7,7 @@ loginForm.addEventListener('submit', (event) => {
   // Get the values of the email and password fields
   const email = loginForm.email.value;
   const password = loginForm.password.value;
-  
+
   // Check if the email and password are correct (this is just an example)
   if(checkbox.checked){
   if (email === 'admin@email.com' && password === 'password') {
@@ -15,6 +15,6 @@ loginForm.addEventListener('submit', (event) => {
     window.location.href = 'min_page.html';
   } else {
     // Redirect the user to the main page
-    window.location.href = 'index.html';
+    window.location.href = 'index.html' + '?username=' + email;
   }
 }});
