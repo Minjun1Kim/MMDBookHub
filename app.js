@@ -8,10 +8,11 @@ loginForm.addEventListener('submit', (event) => {
   const password = loginForm.password.value;
   
   // Check if the email and password are correct (this is just an example)
-  if (email === 'example@email.com' && password == 'p') {
+  if (email === 'admin@email.com' && password === 'password') {
+    // Redirect the user to the admin page
+    window.location.href = 'min_page.html';
+  } else {
     // Redirect the user to the main page
     window.location.href = 'index.html';
-  } else {
-    alert('Incorrect email or password.');
   }
 });
