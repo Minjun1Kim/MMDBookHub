@@ -1,23 +1,167 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Navigation Menu</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <nav class="site-menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-    <p id="username"></p>
+<head>
+	<title>My Website</title>
+	<style>
+		/* Style for the top navigation bar */
+		@media only screen and (min-device-width: 480px){
+      nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin-bottom: 10px;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+		
+		/* Style for the dark mode toggle button */
+		#dark-mode-toggle {
+			/* position: fixed; */
+			top: 20px;
+			right: 20px;
+			padding: 10px;
+			background-color: #fff;
+			color: #333;
+			border: none;
+			cursor: pointer;
+		}
+		
+		body.dark-mode {
+			background-color: #333;
+			color: #fff;
+		}}
+    @media only screen and (max-device-width: 480px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  #dark-mode-toggle {
+			/* position: fixed; */
+			top: 20px;
+			right: 20px;
+			padding: 10px;
+			background-color: #fff;
+			color: #333;
+			border: none;
+			cursor: pointer;
+		}
+		
+		body.dark-mode {
+			background-color: #333;
+			color: #fff;
+		}
+  }
+    .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px; /* Height of the footer */
+    background-color:  #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+	</style>
+</head>
+<body>
+	<!-- Top Navigation Bar -->
+	<nav>
+		<h1>My Website</h1>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Books</a></li>
+			<li><a href="#">Contact</a></li>
+      <button id="dark-mode-toggle">Toggle Dark Mode</button>
+		</ul>
+	</nav>
+	<!-- <div id="user-email" class="user_info"></div> -->
+    <div id="user-name" class="user_info"></div>
+
     <div class="footer">
       Designed by ChatGPT
     </div>
-    <script src="script.js"></script>
-  </body>
+    <script>
+      // Get the email from the local storage
+      const userEmail = localStorage.getItem('userEmail');
+      const userName = localStorage.getItem('userName');
+
+      // Display the email in the specified element
+      if (userEmail) {
+        document.getElementById('user-name').textContent = `Welcome username: ${userName}`;
+      }
+    </script>
+	<!-- Dark Mode Toggle Button -->
+	
+	<!-- Main Content -->
+	<div>
+		<h1>Welcome to My Website</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis nulla euismod, bibendum tortor eu, tristique massa. Morbi at tellus sit amet leo rhoncus sollicitudin. Donec fringilla, sem et iaculis luctus, odio augue vestibulum nibh, eu finibus ipsum justo at tellus. Sed vel tincidunt magna. Nam elementum sapien a enim tempor, vel rhoncus arcu malesuada. Sed sollicitudin orci a nibh commodo sagittis. Nunc sagittis odio id tortor venenatis, non bibendum orci consectetur. Ut aliquam justo in dolor pulvinar, ac suscipit neque dignissim. Ut imperdiet enim purus, vel feugiat odio dignissim in.</p>
+	</div>
+  <div class="footer">
+    Designed by ChatGPT
+  </div>
+	<!-- JavaScript code for dark mode toggle -->
+	<script>
+		const toggleButton = document.getElementById('dark-mode-toggle');
+		const body = document.body;
+
+		toggleButton.addEventListener('click', () => {
+			body.classList.toggle('dark-mode');
+		});
+	</script>
+</body>
 </html>
