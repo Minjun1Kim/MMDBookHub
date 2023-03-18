@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Image Gallery</title>
+    <title>Dashboard</title>
 	<style>
 		body {
   font-family: Arial, sans-serif;
@@ -107,45 +107,31 @@ body {
 }
 	</style>
     <script>
-      function goToPage(page) {
-        window.location.href = page;
-      }
-      function addClickEvents() {
-        var imageBoxes = document.querySelectorAll('.image-box');
-        for (var i = 0; i < imageBoxes.length; i++) {
-          var imageBox = imageBoxes[i];
-          var image = imageBox.querySelector('img');
-          var imageText = imageBox.querySelector('.image-text');
-          imageBox.addEventListener('click', function() {
-            var page = '/contact/userContact/contact.html';
-            goToPage(page);
-          });
-        }
-      }
-      window.addEventListener('load', addClickEvents);
+
     </script>
   </head>
   <body>
     
     <div class="image-container">
       <div class="image-box">
-		<a href="allbooks.html">
+		<a href="/AllBooks/allbooks.html">
         <img src="https://images6.alphacoders.com/346/thumb-1920-346199.jpg">
         <div class="image-text">VIEW ALL BOOKS</div></a>
       </div>
       <div class="image-box">
-		<a href="search.html"></a>
+		<a href="search.html">
         <img src="https://images7.alphacoders.com/339/339484.jpg">
         <div class="image-text">SEARCH BOOKS</div></a>
       </div>
       <div class="image-box">
-        <a href = "/contact/userContact/contact.html"></a>
+        <a href = "/contact/userContact/contact.html">
         <img src="https://media.istockphoto.com/id/1277188775/photo/we-want-your-feedback-speech-bubble-concept.jpg?s=612x612&w=0&k=20&c=g_As78KiYFrF6YtR4wfj_OGlZHqkOrugH_cML7VKqbk=">
-        <div class="image-text">GIVE FEEDBACK</div>
+        <div class="image-text">GIVE FEEDBACK</div></a>
       </div>
       <div class="image-box">
+        <a href = "/about/about.html">
         <img src="https://images.pexels.com/photos/3182743/pexels-photo-3182743.jpeg?cs=srgb&dl=pexels-fauxels-3182743.jpg&fm=jpg">
-        <div class="image-text">ABOUT US</div>
+        <div class="image-text">ABOUT US</div></a>
       </div>
 	</div>
   </body>

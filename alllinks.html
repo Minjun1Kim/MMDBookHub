@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Books List</title>
+    <style>
+      body {
+        background-color: black;
+        color: gold;
+        font-family: Arial, sans-serif;
+      }
+      .book-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto;
+        max-width: 800px;
+      }
+      .book-item {
+        position: relative;
+        margin: 20px;
+        padding: 20px;
+        background-color: gold;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 10px black;
+      }
+      .book-item:hover {
+        background-color: black;
+        color: gold;
+        cursor: pointer;
+      }
+      .book-item:hover:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 15px;
+        border: 3px solid gold;
+        z-index: -1;
+      }
+      .book-link {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book-list">
+      <div class="book-item">
+        <a class="book-link" href="https://www.example.com/book1">Book 1</a>
+      </div>
+      <div class="book-item">
+        <a class="book-link" href="https://www.example.com/book2">Book 2</a>
+      </div>
+      <div class="book-item">
+        <a class="book-link" href="https://www.example.com/book3">Book 3</a>
+      </div>
+      <div class="book-item">
+        <a class="book-link" href="https://www.example.com/book4">Book 4</a>
+      </div>
+      <div class="book-item">
+        <a class="book-link" href="https://www.example.com/book5">Book 5</a>
+      </div>
+    </div>
+  </body>
+</html>
