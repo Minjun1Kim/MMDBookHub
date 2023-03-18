@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        text-align: center;
+        color: #f5f5f5;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/544/378/original/black-elegant-criss-cross-background-free-vector.jpg');
+  background-size: cover;
+  background-position: center;
+      }
+      h1, h3 {
+        text-align: center;
+        color: #f5f5f5;
+        margin: 50px 0;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      label {
+        margin-right: 10px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        width: 300px;
+        margin-right: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      button[type="submit"] {
+        color: #fff;
+        
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      button[type="submit"]:hover {
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Search for a specific book</h1>
+    <h3>Please enter the name of the book you want to search</h3>
+    <form>
+      <label for="search">Search:</label>
+      <input type="text" id="search" name="search">
+      <button type="submit">Search</button>
+    </form>
+  </body>
+</html>

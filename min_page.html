@@ -117,7 +117,7 @@ body {
           var image = imageBox.querySelector('img');
           var imageText = imageBox.querySelector('.image-text');
           imageBox.addEventListener('click', function() {
-            var page = 'image' + (i+1) + '.html';
+            var page = 'search.html';
             goToPage(page);
           });
         }
@@ -128,12 +128,14 @@ body {
   <body>
     <div class="image-container">
       <div class="image-box">
+		<a href="allbooks.html">
         <img src="https://images6.alphacoders.com/346/thumb-1920-346199.jpg">
-        <div class="image-text">VIEW ALL BOOKS</div>
+        <div class="image-text">VIEW ALL BOOKS</div></a>
       </div>
       <div class="image-box">
+		<a href="search.html">
         <img src="https://images7.alphacoders.com/339/339484.jpg">
-        <div class="image-text">SEARCH BOOKS</div>
+        <div class="image-text">SEARCH BOOKS</div></a>
       </div>
       <div class="image-box">
         <img src="https://wallpapercave.com/wp/wp4430535.jpg">
