@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Example</title>
+    <style>
+      /* Styling for search input */
+      input[type="text"] {
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        width: 50%;
+        margin: 10px auto;
+      }
+
+      /* Styling for search results */
+      .result {
+        display: none;
+        margin: 10px auto;
+        max-width: 50%;
+        font-size: 20px;
+      }
+
+      /* Styling for matching text */
+      .match {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Search Example</h1>
+    <p>Type in a keyword to search:</p>
+    <input type="text" id="search-input" onkeyup="search()">
+    <div id="results">
+      <p class="result">This is the first text.</p>
+      <p class="result">This is the second text.</p>
+      <p class="result">This is the third text.</p>
+      <p class="result">This is the fourth text.</p>
+      <p class="result">This is the fifth text.</p>
+      <p class="result">This is the sixth text.</p>
+      <p class="result">This is the seventh text.</p>
+      <p class="result">This is the eighth text.</p>
+      <p class="result">This is the ninth text.</p>
+      <p class="result">This is the tenth text.</p>
+    </div>
+    <script>
+      function search() {
+        // Get input value
+        var input = document.getElementById("search-input").value.toLowerCase();
+
+        // Get all search results
+        var results = document.getElementsByClassName("result");
+
+        // Loop through results and show/hide based on input
+        for (var i = 0; i < results.length; i++) {
+          if (results[i].innerHTML.toLowerCase().indexOf(input) > -1) {
+            results[i].style.display = "";
+            results[i].innerHTML = results[i].innerHTML.replace(new RegExp(input, "gi"), function(match) {
+              return '<span class="match">' + match + '</span>';
+            });
+          } else {
+            results[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
