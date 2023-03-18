@@ -1,34 +1,34 @@
-let book = {
-    id: 0,
-    title: '',
+let book = {// Path: book/book.js
+    id: 0,// Compare this snippet from Loginpage/app.js:
+    title: '',// const loginForm = document.getElementById('login-form');// Get the login form
     author: '',
     summary: '',
     image: ''
 };
 
-let bookArray = [];
+let bookArray = [];// const checkbox = document.getElementById('terms');// Get the checkbox
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {// loginForm.addEventListener('submit', (event) => {// Listen for the form submission
     let newBook = Object.assign({}, book);
     newBook.id = i + 1;
     bookArray.push(newBook);
 }
 
 function updateBook() {
-  let id = document.getElementById('id').value;
+  let id = document.getElementById('id').value;// Prevent the default form submission behavior
   let title = document.getElementById('title').value;
   let author = document.getElementById('author').value;
   let summary = document.getElementById('summary').value;
   let imageInput = document.getElementById('imageInput');
   let image = '';
 
-  if (!id || !title || !author || !summary) {
+  if (!id || !title || !author || !summary) {//Get the values of the email and password fields
     alert('Please enter all fields');
     return;
   }
 
-  if (imageInput.files && imageInput.files[0]) {
-    let reader = new FileReader();
+  if (imageInput.files && imageInput.files[0]) {// Get the values of the email and password fields
+    let reader = new FileReader();// Check if the email and password are correct
     reader.onload = function(e) {
       image = e.target.result;
       // Update the book properties with the new image data
@@ -43,10 +43,10 @@ function updateBook() {
       }
       displayBookList();
     };
-    reader.readAsDataURL(imageInput.files[0]);
+    reader.readAsDataURL(imageInput.files[0]);// Check if the email and password are correct
   } else {
     // Update the book properties without changing the image data
-    let book = bookArray.find(b => b.id == id);
+    let book = bookArray.find(b => b.id == id);// Check if the email and password are correct
     if (book) {
       book.title = title;
       book.author = author;
@@ -60,7 +60,7 @@ function updateBook() {
 
 
 function displayBookList() {
-  let bookList = document.getElementById('bookList');
+  let bookList = document.getElementById('bookList');// Check if the email and password are correct
 
   // Remove all existing list items
   while (bookList.firstChild) {
@@ -92,7 +92,7 @@ function displayBookList() {
 
     // Add the book's image to the list item
     if (book.image) {
-      let imgDiv = document.createElement('div');
+      let imgDiv = document.createElement('div');// Check if the email and password are correct
       let img = document.createElement('img');
       img.src = book.image;
       img.style.maxWidth = '100%';
@@ -100,7 +100,7 @@ function displayBookList() {
       li.appendChild(imgDiv);
     }
 
-    li.draggable = true;
+    li.draggable = true;// Check if the email and password are correct
     li.addEventListener('dragstart', handleDragStart);
     li.addEventListener('dragover', handleDragOver);
     li.addEventListener('drop', handleDrop);
@@ -128,7 +128,7 @@ function displayBookList() {
       }
     });
 
-    let downButton = document.createElement('button');
+    let downButton = document.createElement('button');// Check if the email and password are correct
     downButton.classList.add('arrow-button', 'down-button');
     downButton.innerHTML = '&#9660;';
     downButton.addEventListener('click', () => {
