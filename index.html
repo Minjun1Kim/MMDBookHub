@@ -12,6 +12,20 @@
         transform: translate(-50%, -50%);
         text-align: center;
       }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+      .footer img {
+        height: 50px;
+        margin-left: 10px;
+      }
     </style>
   </head>
   <body>
@@ -28,9 +42,7 @@
         </span>
       </button>
     </nav>
-    <img class="custom-image1" src="uyghurHistory.jpg" />
-    <img class="custom-image" src="koreanHistory.jpg" />
-    <img class="custom-image" src="indianHistory.jpg" />
+  
     <div id="user-email" class="user-email"></div>
 
     <!-- Add the image tag here -->
@@ -38,6 +50,7 @@
 
     <div class="footer">
       Designed by ChatGPT
+      <img class="footer-logo" src="mmd.png" alt="Your Logo">
     </div>
     <script>
       // Get the email from the local storage
@@ -51,3 +64,60 @@
     <script src="script.js"></script>
   </body>
 </html>
+  
+<div class="container">
+    <input type="radio" name="slider" id="item-1" checked>
+    <input type="radio" name="slider" id="item-2">
+    <input type="radio" name="slider" id="item-3">
+    <input type="radio" name="slider" id="item-3">
+    <input type="radio" name="slider" id="item-3">
+
+
+  <div class="cards">
+    <label class="card" for="item-1" id="song-1">
+      <img src="uyghurHistory.jpg" alt="song">
+    </label>
+    <label class="card" for="item-2" id="song-2">
+      <img src="koreanHistory.jpg" alt="song">
+    </label>
+    <label class="card" for="item-3" id="song-3">
+      <img src="indianHistory.jpg" alt="song">
+    </label>
+    
+  </div>
+  <div class="player">
+    <div class="upper-part">
+      <div class="play-icon">
+        <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
+          <defs/>
+          <path d="M5 3l14 9-14 9V3z"/>
+        </svg>
+      </div>
+      <div class="info-area" id="test">
+        <label class="song-info" id="song-info-1">
+          <div class="title">Uyghur History</div>
+          <div class="sub-line">
+            <div class="subtitle">Mustafa</div>
+            <div class="time">4.05</div>
+          </div>
+        </label>
+        <label class="song-info" id="song-info-2">
+          <div class="title">Korean History</div>
+          <div class="sub-line">
+            <div class="subtitle">Minjun</div>
+            <div class="time">4.05</div>
+          </div>
+        </label>
+        <label class="song-info" id="song-info-3">
+          <div class="title">Indian History</div>
+          <div class="sub-line">
+            <div class="subtitle">Divyansh</div>
+            <div class="time">4.05</div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="progress-bar">
+      <span class="progress"></span>
+    </div>
+  </div>

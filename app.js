@@ -19,3 +19,7 @@ loginForm.addEventListener('submit', (event) => {
     window.location.href = 'index.html';
   }
 }});
+$('input').on('change', function() {
+    $('body').toggleClass('blue');
+  });
+  
