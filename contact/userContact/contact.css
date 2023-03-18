@@ -1,0 +1,246 @@
+/* General styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#t {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+header {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li:not(:last-child) {
+  margin-right: 20px;
+}
+
+nav a {
+  font-size: 18px;
+}
+
+main {
+  padding: 50px;
+  min-height: calc(100vh - 220px);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+
+/* Desktop styles */
+
+@media (min-width: 768px) {
+  .contact {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #333; /* added for better contrast */
+  }
+
+  .contact input,
+  .contact textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    font-size: 16px;
+    color: #333; /* added for better contrast */
+  }
+
+  .contact input:focus,
+  .contact textarea:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #333; /* added for better focus */
+  }
+
+  .contact button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .contact button:hover {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333; /* added for better hover effect */
+  }
+}
+  
+  /* Mobile styles */
+  
+  @media (max-width: 767px) {
+    .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    background-color: #333;
+    color: #fff;
+    overflow: hidden;
+    }
+    
+    .navigation.open {
+    max-height: 100vh;
+    }
+    
+    .hamburger {
+    display: block;
+    }
+    
+    .navigation ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    }
+    
+    .navigation li {
+    margin: 10px 0;
+    }
+    
+    .contact {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 0;
+    }
+    
+    .contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .contact label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #333; /* added for better contrast */
+    }
+    
+    .contact input,
+    .contact textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    font-size: 16px;
+    color: #333; /* added for better contrast */
+    }
+    
+    .contact input:focus,
+    .contact textarea:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #333; /* added for better focus */
+    }
+    
+    .contact button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    .contact button:hover {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333; /* added for better hover effect */
+    }
+    
+    .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+}
