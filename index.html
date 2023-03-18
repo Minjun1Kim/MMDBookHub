@@ -1,251 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head><script src="https://cdn.jsdelivr.net/npm/typewriter-effect/dist/core.js"></script>
-
-	<title>My Website</title>
-	<style>
-    body{
-      text-align: center;
-    }
-		/* Style for the top navigation bar */
-		@media only screen and (min-device-width: 480px){
-      nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 200px;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-  }
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav ul li {
-    margin-bottom: 10px;
-  }
-  
-  nav ul li a {
-    display: block;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  nav ul li a:hover {
-    background-color: #fff;
-    color: #333;
-  }
-		
-		/* Style for the dark mode toggle button */
-		#dark-mode-toggle {
-			/* position: fixed; */
-			top: 20px;
-			right: 20px;
-			padding: 10px;
-			background-color: #fff;
-			color: #333;
-			border: none;
-			cursor: pointer;
-		}
-		
-		body.dark-mode {
-			background-color: #333;
-			color: #fff;
-		}}
-    @media only screen and (max-device-width: 480px) {
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin-right: 10px;
-  }
-  
-  nav ul li a {
-    display: block;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  nav ul li a:hover {
-    background-color: #fff;
-    color: #333;
-  }
-  #dark-mode-toggle {
-			/* position: fixed; */
-			top: 20px;
-			right: 20px;
-			padding: 10px;
-			background-color: #fff;
-			color: #333;
-			border: none;
-			cursor: pointer;
-		}
-		
-		body.dark-mode {
-			background-color: #333;
-			color: #fff;
-		}
-  }
-  .typewriter {
-			text-align: center;
-			padding-top: 10em;
-		}
-
-		.typewriter > .wrap {
-			border-right: 0.08em solid rgb(91, 21, 156);
-		}
-    .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50px; /* Height of the footer */
-    background-color:  #333;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-	</style>
-</head>
-<body>
-	<!-- Top Navigation Bar -->
-	<nav>
-		<h1>My Website</h1>
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Books</a></li>
-			<li><a href="#">Contact</a></li>
-      <button id="dark-mode-toggle">Toggle Dark Mode</button>
-		</ul>
-	</nav>
-	<!-- <div id="user-email" class="user_info"></div> -->
-    <div id="user-name" class="user_info"></div>
-    
+  <head>
+    <meta charset="UTF-8">
+    <title>Navigation Menu</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button class="hamburger">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </nav>
     <div class="footer">
       Designed by ChatGPT
+      <img class="footer-logo" src="mmd.png" alt="Your Logo">
     </div>
-    <script>
-      // Get the email from the local storage
-      const userEmail = localStorage.getItem('userEmail');
-      const userName = localStorage.getItem('userName');
-
-      // Display the email in the specified element
-      if (userEmail) {
-        document.getElementById('user-name').textContent = `Welcome username: ${userName}`;
-      }
-    </script>
-	<!-- Dark Mode Toggle Button -->
-	
-	<!-- Main Content -->
-	<div>
-		<h1>Welcome to My Website</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis nulla euismod, bibendum tortor eu, tristique massa. Morbi at tellus sit amet leo rhoncus sollicitudin. Donec fringilla, sem et iaculis luctus, odio augue vestibulum nibh, eu finibus ipsum justo at tellus. Sed vel tincidunt magna. Nam elementum sapien a enim tempor, vel rhoncus arcu malesuada. Sed sollicitudin orci a nibh commodo sagittis. Nunc sagittis odio id tortor venenatis, non bibendum orci consectetur. Ut aliquam justo in dolor pulvinar, ac suscipit neque dignissim. Ut imperdiet enim purus, vel feugiat odio dignissim in.</p>
-	</div>
-  <a href="" class="typewriter" data-period="1000" data-type='[ "Hello", "Namaste!", "Bonjour!", "Hola!","Nǐn hǎo!", "Konnichiwa!", "Hallo!","Annyeong!"]'>
-		<span class="wrap"></span>
-	</a>
-  <div class="footer">
-    Designed by ChatGPT
-  </div>
-	<!-- JavaScript code for dark mode toggle -->
-	<script>
-		const toggleButton = document.getElementById('dark-mode-toggle');
-		const body = document.body;
-
-		toggleButton.addEventListener('click', () => {
-			body.classList.toggle('dark-mode');
-		});
-    window.onload = function() {
-			var elements = document.getElementsByClassName('typewriter');
-			for (var i=0; i<elements.length; i++) {
-				var toRotate = elements[i].getAttribute('data-type');
-				var period = elements[i].getAttribute('data-period');
-				if (toRotate) {
-					new TxtType(elements[i], JSON.parse(toRotate), period);
-				}
-			}
-			// INJECT CSS
-			var css = document.createElement("style");
-			css.type = "text/css";
-			css.innerHTML = ".typewriter > .wrap { border-right: 0.08em solid rgb(91, 21, 156)}";
-			document.body.appendChild(css);
-		};
-
-		var TxtType = function(el, toRotate, period) {
-			this.toRotate = toRotate;
-			this.el = el;
-			this.loopNum = 0;
-			this.period = parseInt(period, 10) || 200;
-			this.txt = '';
-			this.tick();
-			this.isDeleting = false;
-		};
-
-		TxtType.prototype.tick = function() {
-			var i = this.loopNum % this.toRotate.length;
-			var fullTxt = this.toRotate[i];
-
-			if (this.isDeleting) {
-				this.txt = fullTxt.substring(0, this.txt.length - 1);
-			} else {
-				this.txt = fullTxt.substring(0, this.txt.length + 1);
-			}
-
-			this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-			var that = this;
-			var delta = 200 - Math.random() * 100;
-
-			if (this.isDeleting) {
-				delta /= 2;
-			}
-
-			if (!this.isDeleting && this.txt === fullTxt) {
-				delta = this.period;
-				this.isDeleting = true;
-			} else if (this.isDeleting && this.txt === '') {
-				this.isDeleting = false;
-				this.loopNum++;
-				delta = 500;
-			}
-
-			setTimeout(function() {
-				that.tick();
-			}, delta);
-		};
-	</script>
-  <script>
-    const typewriter = new Typewriter('.typewriter', {
-      strings: JSON.parse(document.querySelector('.typewriter').getAttribute('data-type')),
-      autoStart: true,
-      loop: true,
-      cursor: "|",
-      delay: parseInt(document.querySelector('.typewriter').getAttribute('data-period'),5) || 20
-    });
-  </script>
-  <div class="typewriter-text"></div>
-  
-  
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
+  
+<div class="container">
+    <input type="radio" name="slider" id="item-1" checked>
+    <input type="radio" name="slider" id="item-2">
+    <input type="radio" name="slider" id="item-3">
+    
+
+  <div class="cards">
+    <label class="card" for="item-1" id="song-1">
+      <img src="uyghurHistory.jpg" alt="song">
+    </label>
+    <label class="card" for="item-2" id="song-2">
+      <img src="koreanHistory.jpg" alt="song">
+    </label>
+    <label class="card" for="item-3" id="song-3">
+      <img src="indianHistory.jpg" alt="song">
+    </label>
+    
+  </div>
+  <div class="player">
+    <div class="upper-part">
+      <div class="play-icon">
+        <svg width="20" height="20" fill="#2992dc" stroke="#2992dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-play" viewBox="0 0 24 24">
+          <defs/>
+          <path d="M5 3l14 9-14 9V3z"/>
+        </svg>
+      </div>
+      <div class="info-area" id="test">
+        <label class="song-info" id="song-info-1">
+          <div class="title">Uyghur History</div>
+          <div class="sub-line">
+            <div class="subtitle">Mustafa</div>
+            <div class="time">4.05</div>
+          </div>
+        </label>
+        <label class="song-info" id="song-info-2">
+          <div class="title">Korean History</div>
+          <div class="sub-line">
+            <div class="subtitle">Minjun</div>
+            <div class="time">4.05</div>
+          </div>
+        </label>
+        <label class="song-info" id="song-info-3">
+          <div class="title">Indian History</div>
+          <div class="sub-line">
+            <div class="subtitle">Divyansh</div>
+            <div class="time">4.05</div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="progress-bar">
+      <span class="progress"></span>
+    </div>
+  </div>
