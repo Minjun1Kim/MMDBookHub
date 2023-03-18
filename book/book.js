@@ -59,7 +59,6 @@ function updateBook() {
 }
 
 
-
 function displayBookList() {
   let bookList = document.getElementById('bookList');
 

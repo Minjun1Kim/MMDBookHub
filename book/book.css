@@ -62,7 +62,7 @@ label {
   /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #000000;
   align-items: center;
   text-align: center;
   background-color: #ffffff;
@@ -133,7 +133,7 @@ button:hover {
   }
   
   li {
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   border: 1px solid #ccc;
   padding: 20px;
   margin-bottom: 20px;
