@@ -70,11 +70,37 @@ function displayBookList() {
 
   // Add a new list item for each book in the array
   bookArray.forEach((book, index) => {
-
     let li = document.createElement('li');
-    if (book.title && book.author && book.summary) {
-      li.textContent = `Title: ${book.title}, Author: ${book.author}, Summary: ${book.summary}`;
+    
+    // Create a div for the book information
+    let infoDiv = document.createElement('div');
+    
+    // Add title, author, and summary as separate paragraphs
+    let titlePara = document.createElement('p');
+    titlePara.textContent = `Title: ${book.title}`;
+    infoDiv.appendChild(titlePara);
+    
+    let authorPara = document.createElement('p');
+    authorPara.textContent = `Author: ${book.author}`;
+    infoDiv.appendChild(authorPara);
+    
+    let summaryPara = document.createElement('p');
+    summaryPara.textContent = `Summary: ${book.summary}`;
+    infoDiv.appendChild(summaryPara);
+    
+    // Append the div to the list item
+    li.appendChild(infoDiv);
+
+    // Add the book's image to the list item
+    if (book.image) {
+      let imgDiv = document.createElement('div');
+      let img = document.createElement('img');
+      img.src = book.image;
+      img.style.maxWidth = '100%';
+      imgDiv.appendChild(img);
+      li.appendChild(imgDiv);
     }
+
     li.draggable = true;
     li.addEventListener('dragstart', handleDragStart);
     li.addEventListener('dragover', handleDragOver);
@@ -121,14 +147,6 @@ function displayBookList() {
         displayBookList();
       }
     });
-
-    // Add the book's image to the list item
-    if (book.image) {
-      let img = document.createElement('img');
-      img.src = book.image;
-      img.style.maxWidth = '100%';
-      li.appendChild(img);
-    }
 
     buttonsDiv.appendChild(upButton);
     buttonsDiv.appendChild(downButton);
