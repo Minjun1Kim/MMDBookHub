@@ -13,7 +13,7 @@ loginForm.addEventListener('submit', (event) => {
   if(checkbox.checked){
   if (username === 'admin' && password === 'password') {
     // Redirect the user to the admin page
-    window.location.href = 'min_page.html';
+    window.location.href = 'book.html';
   } else {
     // Redirect the user to the main page
     // localStorage.setItem('userEmail', email);

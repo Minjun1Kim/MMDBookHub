@@ -6,12 +6,115 @@
 </head>
 <body>
 	<h1>Forgot Password</h1>
-	<p>Please enter your email address below and we'll send you a link to reset your password.</p>
+	<h2>Please enter your email address below and we'll send you a link to reset your password</h2>
 
 	<form action="send_password.php" method="post">
-		<label for="email">Email:</label>
+		<label for="email" id="email">Please enter your registered email address</label>
 		<input type="email" id="email" name="email" required>
 		<input type="submit" value="Submit">
 	</form>
+	<style>
+		/* Body styles */
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+#email {
+text-align: center;
+margin-bottom: 10px;
+font-family: Arial, sans-serif;
+font-size: small;
+}
+/* Page header styles */
+h1{
+  color: #444;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+h2 {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form styles */
+form {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 20px;
+  align-items: center;
+}
+
+/* Label styles */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Input styles */
+input[type="email"] {
+	display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: 0.5px solid #CCC;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Submit button styles */
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+    width: 100%;
+    padding: 12px 20px;
+    border: 0.5px solid #CCC;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Hover styles for submit button */
+input[type="submit"]:hover {
+  background-color: #000000;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  form {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  input[type="submit"] {
+    margin-top: 10px;
+  }
+}
+
+	</style>
 </body>
 </html>

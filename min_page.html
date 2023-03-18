@@ -1,152 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Website</title>
+	<meta charset="UTF-8">
+	<title>Typewriter Animation</title>
 	<style>
-		/* Style for the top navigation bar */
-		@media only screen and (min-device-width: 480px){
-      nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 200px;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav ul li {
-    margin-bottom: 10px;
-  }
-  
-  nav ul li a {
-    display: block;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  nav ul li a:hover {
-    background-color: #fff;
-    color: #333;
-  }
-		
-		/* Style for the dark mode toggle button */
-		#dark-mode-toggle {
-			/* position: fixed; */
-			top: 20px;
-			right: 20px;
-			padding: 10px;
-			background-color: #fff;
-			color: #333;
-			border: none;
-			cursor: pointer;
+		.typewriter {
+			text-align: center;
+			padding-top: 10em;
 		}
-		
-		body.dark-mode {
-			background-color: #333;
-			color: #fff;
-		}}
-    @media only screen and (max-device-width: 480px) {
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin-right: 10px;
-  }
-  
-  nav ul li a {
-    display: block;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  nav ul li a:hover {
-    background-color: #fff;
-    color: #333;
-  }
-  #dark-mode-toggle {
-			/* position: fixed; */
-			top: 20px;
-			right: 20px;
-			padding: 10px;
-			background-color: #fff;
-			color: #333;
-			border: none;
-			cursor: pointer;
+
+		.typewriter > .wrap {
+			border-right: 0.08em solid rgb(91, 21, 156);
 		}
-		
-		body.dark-mode {
-			background-color: #333;
-			color: #fff;
-		}
-  }
-    .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50px; /* Height of the footer */
-    background-color:  #333;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
 	</style>
 </head>
 <body>
-	<!-- Top Navigation Bar -->
-	<nav>
-		<h1>My Website</h1>
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Books</a></li>
-			<li><a href="#">Contact</a></li>
-      <button id="dark-mode-toggle">Toggle Dark Mode</button>
-		</ul>
-	</nav>
-	
-	<!-- Dark Mode Toggle Button -->
-	
-	<!-- Main Content -->
-	<div>
-		<h1>Welcome to My Website</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis nulla euismod, bibendum tortor eu, tristique massa. Morbi at tellus sit amet leo rhoncus sollicitudin. Donec fringilla, sem et iaculis luctus, odio augue vestibulum nibh, eu finibus ipsum justo at tellus. Sed vel tincidunt magna. Nam elementum sapien a enim tempor, vel rhoncus arcu malesuada. Sed sollicitudin orci a nibh commodo sagittis. Nunc sagittis odio id tortor venenatis, non bibendum orci consectetur. Ut aliquam justo in dolor pulvinar, ac suscipit neque dignissim. Ut imperdiet enim purus, vel feugiat odio dignissim in.</p>
-	</div>
-  <div class="footer">
-    Designed by ChatGPT
-  </div>
-	<!-- JavaScript code for dark mode toggle -->
-	<script>
-		const toggleButton = document.getElementById('dark-mode-toggle');
-		const body = document.body;
+	<a href="" class="typewriter" data-period="1000" data-type='[ "Hello", "Namaste!", "Bonjour!", "Hola!","Nǐn hǎo!", "Konnichiwa!", "Hallo!","Annyeong!"]'>
+		<span class="wrap"></span>
+	</a>
 
-		toggleButton.addEventListener('click', () => {
-			body.classList.toggle('dark-mode');
-		});
+	<script>
+		window.onload = function() {
+			var elements = document.getElementsByClassName('typewriter');
+			for (var i=0; i<elements.length; i++) {
+				var toRotate = elements[i].getAttribute('data-type');
+				var period = elements[i].getAttribute('data-period');
+				if (toRotate) {
+					new TxtType(elements[i], JSON.parse(toRotate), period);
+				}
+			}
+			// INJECT CSS
+			var css = document.createElement("style");
+			css.type = "text/css";
+			css.innerHTML = ".typewriter > .wrap { border-right: 0.08em solid rgb(91, 21, 156)}";
+			document.body.appendChild(css);
+		};
+
+		var TxtType = function(el, toRotate, period) {
+			this.toRotate = toRotate;
+			this.el = el;
+			this.loopNum = 0;
+			this.period = parseInt(period, 10) || 2000;
+			this.txt = '';
+			this.tick();
+			this.isDeleting = false;
+		};
+
+		TxtType.prototype.tick = function() {
+			var i = this.loopNum % this.toRotate.length;
+			var fullTxt = this.toRotate[i];
+
+			if (this.isDeleting) {
+				this.txt = fullTxt.substring(0, this.txt.length - 1);
+			} else {
+				this.txt = fullTxt.substring(0, this.txt.length + 1);
+			}
+
+			this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+			var that = this;
+			var delta = 200 - Math.random() * 100;
+
+			if (this.isDeleting) {
+				delta /= 2;
+			}
+
+			if (!this.isDeleting && this.txt === fullTxt) {
+				delta = this.period;
+				this.isDeleting = true;
+			} else if (this.isDeleting && this.txt === '') {
+				this.isDeleting = false;
+				this.loopNum++;
+				delta = 500;
+			}
+
+			setTimeout(function() {
+				that.tick();
+			}, delta);
+		};
 	</script>
 </body>
 </html>

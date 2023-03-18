@@ -9,7 +9,14 @@
     color: #fff;
     padding: 20px;
   }
-  
+  .typewriter {
+    text-align: center;
+    padding-top: 10em;
+  }
+
+  .typewriter > .wrap {
+    border-right: 0.08em solid rgb(91, 21, 156);
+  }
   nav ul {
     list-style: none;
     padding: 0;

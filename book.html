@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="book.css">
+  </head>
+  <body>
+    <h1 id="c">Update Book Form</h1>
+    <form class="center">
+      <label>ID:</label>
+      <select id="id">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <br>
+      <label>Title:</label>
+      <input type="text" id="title">
+      <br>
+      <label>Author:</label>
+      <input type="text" id="author">
+      <br>
+      <label>Summary:</label>
+      <textarea id="summary"></textarea>
+      <br>
+      <label>Image:</label>
+      <input type="file" id="imageInput">
+      <br>
+      <button type="button"id = "but" onclick="updateBook()">Update Book</button>
+    </form>
+    <div id = "i">
+    <div class="header-text">Drag to switch order</div>
+    <ul id="bookList">
+      <li draggable="true" class="book">...</li>
+      <li draggable="true" class="book">...</li>
+      <li draggable="true" class="book">...</li>
+      <li draggable="true" class="book">...</li>
+      <li draggable="true" class="book">...</li>
+    </ul></div>
+    <script src="book.js"></script>
+  </body>
+</html>
