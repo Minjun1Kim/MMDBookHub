@@ -1,5 +1,5 @@
 # b20a2
-Who are we?
+Who are we?\n
 We are Divyansh, Minjun, and Mustafa, upper-year computer science students at the University of Toronto Scarborough. We chose the CSCB20 course to excel in web development skills and have decided to use HTML, CSS, and JavaScript to create a project for this course. For Assignment 2, we have been tasked with designing a mock-up website for Okayreads.com, which will display the main functionality of the page.
 Website Requirements:
 Our website must include a navigation menu that sticks to the left side of the window in full screen or across the top of the screen in mobile view. It must also have a footer that sticks to the bottom of the page, displaying the names of all team members who designed the page. The main page should contain five books of the week with images of each book. Additionally, there should be a page for each book of the week that provides details and a summary of the book. Users should be able to add a review of the book, and there should be a page that allows users to log in to the website. An admin page should only appear if the login name is "admin," allowing the user to set the order in which the books of the week appear on the main page. Finally, there should be a page that lists all the reviews of users for each book.
