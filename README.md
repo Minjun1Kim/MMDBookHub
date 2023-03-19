@@ -1,5 +1,6 @@
-# b20a2
-# Okayreads Website
+
+# MMD Bookhub
+Unlock a world of knowledge with MMD Bookhub
 
 ## Introduction
 This is a mock-up website for Okayreads.com, created for the CSCB20 course at the University of Toronto Scarborough. The website displays the main functionality of the page, including book listings, book details, user reviews, and admin controls.
