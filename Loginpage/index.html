@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Logo Animation Example</title>
+    <style>
+      body {
+        background-color: black;
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #logo-img {
+        /* position: fixed; */
+        bottom: -100px;
+        left: 50%;
+        /* transform: translateX(-50%); */
+        animation: moveUp 2s ease-in-out forwards, grow 2s ease-in-out forwards, glow 1s ease-in-out infinite alternate;
+        z-index: 1;
+      }
+      
+      @keyframes moveUp {
+        to {
+          bottom: 0;
+        }
+      }
+
+      @keyframes grow {
+        0% {
+          width: 400px;
+          height: 300px;
+        }
+        100% {
+          width: 680px;
+          height: 510px;
+        }
+      }
+      
+      @keyframes glow {
+        to {
+          box-shadow: 0 0 20px 5px white;
+        }
+      }
+    </style>
+    <script>
+      setTimeout(function() {
+        window.location.href = "/Dashboard/min_page.html";
+      }, 2000);
+    </script>
+  </head>
+  <body>
+    <img id="logo-img" src="/assets/images/PHOTO-2023-03-17-20-06-33-removebg-preview.png" alt="Logo">
+  </body>
+</html>

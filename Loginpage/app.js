@@ -16,6 +16,6 @@ loginForm.addEventListener('submit', (event) => {// Listen for the form submissi
   } else {
     // Redirect the user to the main page
     localStorage.setItem('userName', username);// Redirect the user to the main page
-    window.location.href = '/Dashboard/min_page.html';// Redirect the user to the main page
+    window.location.href = 'index.html';// Redirect the user to the main page
   }
 }});
