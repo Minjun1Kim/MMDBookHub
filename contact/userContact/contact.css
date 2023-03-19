@@ -12,6 +12,7 @@
   justify-content: center;
 }
 body {
+  background-image: url('https://cdn.wallpapersafari.com/23/71/OWBjGk.jpg');
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -79,6 +80,7 @@ footer {
 
 @media (min-width: 768px) {
   .contact {
+    background-color: #f3f3f3;
     width: 50%;
     margin: 0 auto;
     text-align: center;
@@ -89,6 +91,7 @@ footer {
   }
 
   .contact form {
+    background-color: #f3f3f3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,7 +112,7 @@ footer {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #f3f3f3;
+    background-color: #ffffff;
     font-size: 16px;
     color: #333; /* added for better contrast */
   }
@@ -210,7 +213,7 @@ footer {
     .contact input:focus,
     .contact textarea:focus {
     outline: none;
-    box-shadow: 0px 0px 5px #333; /* added for better focus */
+    box-shadow: 0px 0px 5px #000000; /* added for better focus */
     }
     
     .contact button {

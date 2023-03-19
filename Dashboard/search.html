@@ -2,59 +2,56 @@
 <html>
   <head>
     <title>Search Example</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-        text-align: center;
-        color: #f5f5f5;
-  background-image: url('https://static.vecteezy.com/system/resources/previews/001/544/378/original/black-elegant-criss-cross-background-free-vector.jpg');
-  background-size: cover;
-  background-position: center;
-      }
-      
-      h1, h3 {
-        text-align: center;
-        color: #f5f5f5;
-        margin: 50px 0;
-      }
-      form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      label {
-        margin-right: 10px;
-      }
-      input[type="text"] {
-        padding: 10px;
-        border-radius: 5px;
-        border: 2px solid #ccc;
-        width: 300px;
-        margin-right: 10px;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-      }
-      button[type="submit"] {
-        color: #fff;
-        background-color: #8b7a36;
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-      }
-      button[type="submit"]:hover {
-        background-color: #333;
-      }
-    </style>
+    <link rel="stylesheet" href="search.css">
   </head>
   <body>
+    <nav id = "nav">
+      <img src = "/assets/images/PHOTO-2023-03-17-20-06-33-removebg-preview.png" alt = "logo" id = "logo" width="200px">
+      <ul>
+        <li><a href="/Dashboard/min_page.html">MY DASHBOARD</a></li>
+        <li><a href="search.html">SEARCH FOR BOOKS</a></li>
+        <li><a href="/Books/book1.html">BOOK1</a></li>
+        <li><a href="/Books/book2.html">BOOK2</a></li>
+        <li><a href="/Books/book3.html">BOOK3</a></li>
+        <li><a href="/Books/book4.html">BOOK4</a></li>
+        <li><a href="/Books/book5.html">BOOK5</a></li>
+        <li><a href="/contact/userContact/contact.html">GIVE RATING</a></li>
+        <li><a href="/about/about.html">ABOUT US</a></li>
+        <li><a href="/Loginpage/login.html">LOGOUT</a></li>
+
+        <!-- <button id="dark-mode-toggle">Toggle Dark Mode</button> -->
+      </ul>
+    </nav>
+  <div class="footer" id ="fot">
+    <h3>Made by Divyansh, Minjun and Mustafa</h3>
+    <h4> © 2023 MMD BookHub. All rights reserved</h4>
+  </div>
     <h1>Search for a specific book</h1>
-    <h3>Please enter the name of the book you want to search</h3>
-    <form>
+    <h3>Please select the ID of the specific book that you want to see</h3>
+    <form id = "login-form">
       <label for="search">Search:</label>
-      <input type="text" id="search" name="search">
+      <select id="book-select" name="book" required>
+        <option value="book1">Book 1</option>
+        <option value="book2">Book 2</option>
+        <option value="book3">Book 3</option>
+        <option value="book4">Book 4</option>
+        <option value="book5">Book 5</option>
+      </select>
       <button type="submit">Search</button>
     </form>
+    <script>
+    const loginForm = document.getElementById('login-form');// Get the login form
+    loginForm.addEventListener('submit', (event) => {// Listen for the form submission
+  event.preventDefault(); // Prevent the default form submission behavior
+  // Get the values of the email and password fields
+  // const email = loginForm.email.value;
+  const bookSelect = document.getElementById('book-select'); // Get the book select element
+const bookName = bookSelect.value; // Get the selected book name
+
+// Redirect the user to the book page
+window.location.href = "/Books/" + bookName + ".html";
+
+});
+    </script>
   </body>
 </html>

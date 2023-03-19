@@ -1,148 +1,54 @@
-/* Reset styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body styles */
-  body {
-    background-image: url('https://cdn.wallpapersafari.com/23/71/OWBjGk.jpg');
+#login-form {
+    display: flex;
     align-items: center;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    background-color: #f5f5f5;
-  }
-  
-  /* Header styles */
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-  }
-  
-  /* Main styles */
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  /* About section styles */
-  #about {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 1rem;
-  }
-  
-  #about h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  #about p {
-    margin-bottom: 1rem;
-  }
-  
-  /* Footer styles */
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-  
-  /* Navigation menu styles */
-  nav {
-    position: fixed;
-    /* top: 0;
-    left: 0; */
-    width: 200px;
-    /* height: 100%; */
-    background-color: #333;
-    color: #fff;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    margin-top: 20px;
   }
 
-  
-  nav li:last-child {
-    border-bottom: none;
+  #login-form label {
+    margin-right: 10px;
   }
-  
-  nav a {
-    display: block;
-    padding: 1rem;
-    color: #fff;
+
+  #book-select {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  #book-select:hover {
+    border-color: #666;
+  }
+
+  #book-select option:hover {
+    background-color: #f2f2f2;
+  }
+
+  button[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
-  
-  nav a:hover {
-    background-color: #666;
+
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
   }
-  
-  /* Books section styles */
-  .books {
-    display: flex;
-    flex-wrap: wrap;
+
+  button[type="submit"]:active {
+    background-color: #29773d;
   }
-  
-  .book {
-    margin: 1rem;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    width: 200px;
-  }
-  
-  .book img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  
-  .book h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .book p {
-    margin-bottom: 1rem;
-  }
-  
-  /* Hovering text styles */
-  .hover {
-    position: relative;
-  }
-  
-  .hover:hover .text {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .text {
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    visibility: hidden;
-    opacity: 0;
-    background-color: #333;
-    color: #fff;
-    padding: 0.5rem;
-    transition: opacity 0.3s ease;
-  }
-  
-  #fot {
+#fot {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -269,4 +175,47 @@
             background-color: #333;
             color: #fff;
         }
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    color: #f5f5f5;
+background-image: url('https://static.vecteezy.com/system/resources/previews/001/544/378/original/black-elegant-criss-cross-background-free-vector.jpg');
+background-size: cover;
+background-position: center;
+  }
+  
+  h1, h3 {
+    text-align: center;
+    color: #f5f5f5;
+    margin: 50px 0;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  label {
+    margin-right: 10px;
+  }
+  input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    width: 300px;
+    margin-right: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  button[type="submit"] {
+    color: #fff;
+    background-color: #8b7a36;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  button[type="submit"]:hover {
+    background-color: #333;
   }
