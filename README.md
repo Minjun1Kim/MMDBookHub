@@ -6,7 +6,7 @@ Unlock a world of knowledge with MMD Bookhub
 This is a mock-up website for Okayreads.com, created for the CSCB20 course at the University of Toronto Scarborough. The website displays the main functionality of the page, including book listings, book details, user reviews, and admin controls.
 
 ## Team Members
-<img src="https://media.licdn.com/dms/image/C5603AQHMhJncxxeY3A/profile-displayphoto-shrink_800_800/0/1663289948994?e=1684972800&v=beta&t=cpDEjc4DL4Dhc--DfZ_r7oyjIy9GJrSo_QYqUVIb6A0" alt="Alt Text" width="100" height="100"> <img src="https://media.licdn.com/dms/image/D4E03AQGLX4XTXXtxuw/profile-displayphoto-shrink_800_800/0/1664589405625?e=2147483647&v=beta&t=u1pgYNx9ocx-9r6OA6KNGlOTBCscGKXJwXEMEAvUPJo" alt="Alt Text" width="100" height="100"><img src="https://media.licdn.com/dms/image/C4D03AQELfU_A2YgpRA/profile-displayphoto-shrink_800_800/0/1663035659765?e=2147483647&v=beta&t=Vf84bxm6GAVkhqtDHvaH0tuP_9G9rPHTmoXnYhhfiIo" alt="Alt Text" width="100" height="100>
+<img src="https://media.licdn.com/dms/image/C5603AQHMhJncxxeY3A/profile-displayphoto-shrink_800_800/0/1663289948994?e=1684972800&v=beta&t=cpDEjc4DL4Dhc--DfZ_r7oyjIy9GJrSo_QYqUVIb6A0" alt="Alt Text" width="100" height="100"> <img src="https://media.licdn.com/dms/image/D4E03AQGLX4XTXXtxuw/profile-displayphoto-shrink_800_800/0/1664589405625?e=2147483647&v=beta&t=u1pgYNx9ocx-9r6OA6KNGlOTBCscGKXJwXEMEAvUPJo" alt="Alt Text" width="100" height="100"><img src="https://media.licdn.com/dms/image/C4D03AQELfU_A2YgpRA/profile-displayphoto-shrink_800_800/0/1663035659765?e=2147483647&v=beta&t=Vf84bxm6GAVkhqtDHvaH0tuP_9G9rPHTmoXnYhhfiIo" alt="Alt Text" width="100" height="100">
 
 ## Technologies Used
 - HTML
