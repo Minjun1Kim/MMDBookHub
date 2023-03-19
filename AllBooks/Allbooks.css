@@ -73,23 +73,35 @@ html, body {
           }}
       @media only screen and (max-device-width: 480px) {
     #nav {
+      top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: #333;
       color: #fff;
-      padding: 20px;
+      padding: 10px;
     }
-    
+    #nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      #logo {
+        /* font-size: 1.5em; */
+        height: 60px;
+      }
     #nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
+      /* display: none; */
     }
     
     #nav ul li {
-      margin-right: 10px;
+        margin-right: 5px;
+        padding: 0;
     }
     
     #nav ul li a {
@@ -97,12 +109,17 @@ html, body {
       padding: 10px;
       color: #fff;
       text-decoration: none;
+      /* align-items: center; */
     }
     
     #nav ul li a:hover {
       background-color: #fff;
       color: #333;
+      font-size: 14px;
     }
+    #nav .menu-icon {
+    display: block;
+  }
     #dark-mode-toggle {
               /* position: fixed; */
               top: 20px;
@@ -155,8 +172,12 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
+  
   
   .carousel > * {
     flex: 0 0 auto;
@@ -169,13 +190,15 @@ html, body {
     transition: transform 0.5s;
   }
   
+  
   .carousel figure img {
     width: 100%;
     box-sizing: border-box;
-    height: 700px;
+    height: 500px;
     padding: 0 20px;
     object-fit: cover;
   }
+  
   
   .carousel figure img:not(:first-of-type) {
     position: absolute;

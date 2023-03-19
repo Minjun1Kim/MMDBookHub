@@ -104,7 +104,7 @@ footer {
 
   .contact input,
   .contact textarea {
-    width: 100%;
+    width: 50%;
     margin-bottom: 20px;
     padding: 10px;
     border: none;
