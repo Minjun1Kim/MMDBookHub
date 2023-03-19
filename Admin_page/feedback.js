@@ -16,20 +16,26 @@ function loadFeedback() {// Clear current feedback list
 
     // Add feedback data to the row
     const feedbackCells = [// Add checkbox to mark feedback as dismissed
-      index + 1,// Add checkbox to mark feedback as dismissed
+      // Add checkbox to mark feedback as dismissed
       feedback.name,// Add checkbox to mark feedback as dismissed
       feedback.email,// Add checkbox to mark feedback as dismissed
-      feedback.subject,// Add checkbox to mark feedback as dismissed
+      feedback.book,// Add checkbox to mark feedback as dismissed
+      feedback.rating,// Add checkbox to mark feedback as dismissed
       feedback.message,
       new Date(feedback.timestamp).toLocaleString(),
     ];
 
-    feedbackCells.forEach((cell) => {// Add reply button to send email to user
-      const cellElement = document.createElement('td');// Add reply button to send email to user
-      cellElement.innerText = cell;// Add reply button to send email to user
-      row.appendChild(cellElement);// Add reply button to send email to user
+    feedbackCells.forEach((cell) => {
+      const cellElement = document.createElement('td');
+      if (cell === feedback.rating) {
+        const ratingStars = Array.from({ length: cell }, () => '★').join('');
+        cellElement.innerHTML = ratingStars;
+      } else {
+        cellElement.innerText = cell;
+      }
+      row.appendChild(cellElement);
     });
-
+    
     // Add checkbox to mark feedback as dismissed
     const checkboxCell = document.createElement('td');// Add checkbox to mark feedback as dismissed
     const checkbox = document.createElement('input');

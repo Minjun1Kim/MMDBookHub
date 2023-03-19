@@ -10,16 +10,14 @@
         <ul>
           <li><a href="/Dashboard/min_page.html">MY DASHBOARD</a></li>
           <li><a href="/Dashboard/search.html">SEARCH FOR BOOKS</a></li>
-          <li><a href="/Books/book1.html">BOOK1</a></li>
-          <li><a href="/Books/book2.html">BOOK2</a></li>
-          <li><a href="/Books/book3.html">BOOK3</a></li>
-          <li><a href="/Books/book4.html">BOOK4</a></li>
-          <li><a href="/Books/book5.html">BOOK5</a></li>
+          <li><a href="/Books/book1.html?id=1">BOOK1</a></li>
+          <li><a href="/Books/book1.html?id=2">BOOK2</a></li>
+          <li><a href="/Books/book1.html?id=3">BOOK3</a></li>
+          <li><a href="/Books/book1.html?id=4">BOOK4</a></li>
+          <li><a href="/Books/book1.html?id=5">BOOK5</a></li>
           <li><a href="/contact/userContact/contact.html">GIVE REVIEW</a></li>
           <li><a href="/Admin_page/feedback.html">VIEW BOOK REVIEWS</a></li>
           <li><a href="/Loginpage/login.html">LOGOUT</a></li>
-
-          <!-- <button id="dark-mode-toggle">Toggle Dark Mode</button> -->
         </ul>
       </nav>
     <div class="footer" id ="fot">
@@ -27,10 +25,11 @@
       <h4> © 2023 MMD BookHub. All rights reserved</h4>
     </div>
     <div class="book">
-      <img src="/assets/images/uyghurHistory.jpg" alt="Book 1">
-      <h2>UyghurHistory</h2>
-      <h3>by Author Name 1</h3>
-      <p>Summary of Book 1 goes here...</p>
-    </div>    
+      <img id="book-image" src="" alt="Book">
+      <h2 id="book-title">Book Title</h2>
+      <h3 id="book-author">by Author Name</h3>
+      <p id="book-summary">Summary of Book goes here...</p>
+    </div>
+    <script src="/bookLink.js"></script>
   </body>
 </html>

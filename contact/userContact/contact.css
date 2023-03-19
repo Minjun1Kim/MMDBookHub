@@ -375,3 +375,27 @@ footer {
             color: #fff;
         }
   }
+
+  .star-rating {
+    display: inline-flex;
+    font-size: 1.5em;
+    user-select: none;
+    direction: ltr;
+    unicode-bidi: bidi-override;
+  }
+  
+  .star-rating input {
+    display: none;
+  }
+  
+  .star-rating label {
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .star-rating input:checked ~ label,
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color: #f5c518;
+  }
+  

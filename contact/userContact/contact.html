@@ -14,11 +14,11 @@
         <ul>
           <li><a href="/Dashboard/min_page.html">MY DASHBOARD</a></li>
           <li><a href="/Dashboard/search.html">SEARCH FOR BOOKS</a></li>
-          <li><a href="/Books/book1.html">BOOK1</a></li>
-          <li><a href="/Books/book2.html">BOOK2</a></li>
-          <li><a href="/Books/book3.html">BOOK3</a></li>
-          <li><a href="/Books/book4.html">BOOK4</a></li>
-          <li><a href="/Books/book5.html">BOOK5</a></li>
+          <li><a href="/Books/book1.html?id=1">BOOK1</a></li>
+          <li><a href="/Books/book1.html?id=2">BOOK2</a></li>
+          <li><a href="/Books/book1.html?id=3">BOOK3</a></li>
+          <li><a href="/Books/book1.html?id=4">BOOK4</a></li>
+          <li><a href="/Books/book1.html?id=5">BOOK5</a></li>
           <li><a href="/contact/userContact/contact.html">GIVE REVIEW</a></li>
           <li><a href="/Admin_page/feedback.html">VIEW BOOK REVIEWS</a></li>
           <li><a href="/Loginpage/login.html">LOGOUT</a></li>
@@ -32,18 +32,28 @@
       </div>
       <section class="contact">
         <form id="contact-form">
-          <h1>Please give Review for your book</h1>
+          <h1>Leave a Review</h1>
             <br><br>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" optional>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          <label for="subject">Book name and Subject of Review:</label>
-          <input type="text" id="subject" name="subject" required>
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-          <button type="submit">Send</button><br>
-          <a href = "/Admin_page/feedback.html">View all Reviews</a>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" optional>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="book">Book:</label>
+            <select id="book" name="book" required></select>
+          
+            <label for="rating">Rating:</label>
+            <div class="star-rating">
+              <input type="radio" name="rating" value="1" id="rating-1"><label for="rating-1">★</label>
+              <input type="radio" name="rating" value="2" id="rating-2"><label for="rating-2">★</label>
+              <input type="radio" name="rating" value="3" id="rating-3"><label for="rating-3">★</label>
+              <input type="radio" name="rating" value="4" id="rating-4"><label for="rating-4">★</label>
+              <input type="radio" name="rating" value="5" id="rating-5"><label for="rating-5">★</label>
+            </div>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" optional></textarea>
+            <button type="submit">Send</button><br>
+            <a href="/Admin_page/feedback.html">View all Reviews</a>
         </form>
       </section>
     </main>

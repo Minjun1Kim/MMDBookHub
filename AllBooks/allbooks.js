@@ -6,6 +6,7 @@ if (userEmail) {
   document.getElementById('user-email').textContent = `Logged in as: ${userEmail}`;
 }
 
+
 loadBookImages();
 
 window.addEventListener('load', () => {
@@ -95,11 +96,15 @@ window.addEventListener('load', () => {
     function rotateCarousel(imageIndex) {
       figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
     
-      // Add these lines to update the image name
       const imageNameElement = document.getElementById('image-name');
+      const imageLink = document.getElementById('image-name-link');
       const imageName = images[imageIndex % n].alt;
       imageNameElement.textContent = imageName;
+    
+      imageLink.href = `/Books/book1.html?id=${bookArray[imageIndex % n].id}`;
+    
     }
+    
 
   }
 
@@ -110,11 +115,20 @@ window.addEventListener('load', () => {
     const bookArray = JSON.parse(bookArrayJSON);
     const figureElement = document.querySelector('.carousel figure');
   
+    let loadedImagesCount = 0;
+  
     for (const book of bookArray) {
       const img = document.createElement('img');
       img.src = book.image;
       img.alt = `${book.id}. ${book.title}`;
+      img.onload = () => {
+        loadedImagesCount++;
+        if (loadedImagesCount === bookArray.length) {
+          rotateCarousel(0);
+        }
+      };
       figureElement.appendChild(img);
     }
   }
+  
     
