@@ -64,9 +64,13 @@
     font-weight: bold;
     color: #555;
   }
-  #imageInput{
-    /* display: flex; */
-    /* flex-direction: column; */
+
+  .image-input-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #imageInput {
     align-items: center;
     justify-content: center;
     color: #000000;
@@ -84,6 +88,23 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
   }
+  
+  .remove-image-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
   select,
   input,
   textarea {
@@ -108,6 +129,7 @@
   input[type="file"] {
     margin-bottom: 20px;
   }
+  
   
   button {
     background-color: #008CBA;

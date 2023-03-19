@@ -6,56 +6,97 @@ let book = {// Path: book/book.js
     image: ''
 };
 
-let bookArray = [];// const checkbox = document.getElementById('terms');// Get the checkbox
+// const initialBooks = [
+//   {
+//     id: 1,
+//     title: 'Uyghur History',
+//     author: 'Uyghur',
+//     summary: 'Uyghur History',
+//     image: '/assets/images/uyghurHistory.jpg',
+//   },
+//   {
+//     id: 2,
+//     title: 'Korean Book',
+//     author: 'Korean',
+//     summary: 'Korean Book',
+//     image: '/assets/images/kor.jpg',
+//   },
+//   {
+//     id: 3,
+//     title: 'Indian Book',
+//     author: 'Indian',
+//     summary: 'Indian Book',
+//     image: '/assets/images/ind.jpg',
+//   },
+//   {
+//     id: 4,
+//     title: 'Indian History',
+//     author: 'Indian',
+//     summary: 'Indian History',
+//     image: '/assets/images/indianHistory.jpg',
+//   },
+//   {
+//     id: 5,
+//     title: 'Korean History',
+//     author: 'Korean',
+//     summary: 'Korean History',
+//     image: '/assets/images/koreanHistory.jpg',
+//   },
+// ];
 
-for (let i = 0; i < 5; i++) {// loginForm.addEventListener('submit', (event) => {// Listen for the form submission
-    let newBook = Object.assign({}, book);
-    newBook.id = i + 1;
-    bookArray.push(newBook);
-}
+
+// let storedData = localStorage.getItem('bookArray');
+// if (!storedData) {
+//   localStorage.setItem('bookArray', JSON.stringify(initialBooks));
+//   storedData = JSON.stringify(initialBooks);
+// }
+// let bookArray = JSON.parse(storedData);
 
 function updateBook() {
-  let id = document.getElementById('id').value;// Prevent the default form submission behavior
+  let id = document.getElementById('id').value;
   let title = document.getElementById('title').value;
   let author = document.getElementById('author').value;
   let summary = document.getElementById('summary').value;
   let imageInput = document.getElementById('imageInput');
   let image = '';
 
-  if (!id || !title || !author || !summary) {//Get the values of the email and password fields
-    alert('Please enter all fields');
+
+  if (!id ) {
+    alert('Please select a book to update');
     return;
   }
 
-  if (imageInput.files && imageInput.files[0]) {// Get the values of the email and password fields
-    let reader = new FileReader();// Check if the email and password are correct
+  if (imageInput.files && imageInput.files[0]) {
+    let reader = new FileReader();
     reader.onload = function(e) {
       image = e.target.result;
-      // Update the book properties with the new image data
       let book = bookArray.find(b => b.id == id);
       if (book) {
-        book.title = title;
-        book.author = author;
-        book.summary = summary;
+        if (title) book.title = title;
+        if (author) book.author = author;
+        if (summary) book.summary = summary;
         book.image = image;
       } else {
         alert('Book not found');
       }
+      localStorage.setItem('bookArray', JSON.stringify(bookArray));
       displayBookList();
     };
-    reader.readAsDataURL(imageInput.files[0]);// Check if the email and password are correct
+    reader.readAsDataURL(imageInput.files[0]);
   } else {
-    // Update the book properties without changing the image data
-    let book = bookArray.find(b => b.id == id);// Check if the email and password are correct
+    let book = bookArray.find(b => b.id == id);
     if (book) {
-      book.title = title;
-      book.author = author;
-      book.summary = summary;
+      if (title) book.title = title;
+      if (author) book.author = author;
+      if (summary) book.summary = summary;
     } else {
       alert('Book not found');
     }
+
+    localStorage.setItem('bookArray', JSON.stringify(bookArray));
     displayBookList();
   }
+  imageInput.value = '';
 }
 
 
@@ -123,7 +164,8 @@ function displayBookList() {
         bookArray.forEach((book, index) => {
           book.id = index + 1;
         });
-
+        
+        localStorage.setItem('bookArray', JSON.stringify(bookArray));
         displayBookList();
       }
     });
@@ -143,6 +185,7 @@ function displayBookList() {
           book.id = index + 1;
         });
 
+        localStorage.setItem('bookArray', JSON.stringify(bookArray));
         displayBookList();
       }
     });
@@ -200,6 +243,17 @@ function handleDrop(e) {
     return false;
 }
 
+function removeImage() {
+  const imageInput = document.getElementById('imageInput');
+  imageInput.value = '';
+
+  // If you have an image preview element, clear it
+  const imagePreview = document.getElementById('imagePreview');
+  if (imagePreview) {
+    imagePreview.innerHTML = '';
+  }
+}
+
 function handleFileSelect(e) {
     let file = e.target.files[0];
     let reader = new FileReader();
@@ -212,7 +266,4 @@ function handleFileSelect(e) {
     reader.readAsDataURL(file);
 }
 
-window.addEventListener('load', () => {
-    displayBookList();
-    document.getElementById('file').addEventListener('change', handleFileSelect);
-});
+document.addEventListener('DOMContentLoaded', displayBookList);

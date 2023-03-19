@@ -5,6 +5,9 @@ const userEmail = localStorage.getItem('userEmail');
 if (userEmail) {
   document.getElementById('user-email').textContent = `Logged in as: ${userEmail}`;
 }
+
+loadBookImages();
+
 window.addEventListener('load', () => {
     var
       carousels = document.querySelectorAll('.carousel')
@@ -88,6 +91,7 @@ window.addEventListener('load', () => {
       const image = images[imageIndex];
       image.style.transform = `rotateY(${imageIndex * theta}rad) scale(${scale})`;
     }
+
     function rotateCarousel(imageIndex) {
       figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
     
@@ -96,5 +100,21 @@ window.addEventListener('load', () => {
       const imageName = images[imageIndex % n].alt;
       imageNameElement.textContent = imageName;
     }
-    
+
+  }
+
+  function loadBookImages() {
+    const bookArrayJSON = localStorage.getItem('bookArray');
+    if (!bookArrayJSON) return;
+  
+    const bookArray = JSON.parse(bookArrayJSON);
+    const figureElement = document.querySelector('.carousel figure');
+  
+    for (const book of bookArray) {
+      const img = document.createElement('img');
+      img.src = book.image;
+      img.alt = `${book.id}. ${book.title}`;
+      figureElement.appendChild(img);
     }
+  }
+    
