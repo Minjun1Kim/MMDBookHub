@@ -1,35 +1,247 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Clock Loader Example</title>
-    <style>
-      .clock-loader {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        border: 3px solid #ccc;
-        border-top-color: #333;
-        border-radius: 50%;
-        animation: spin 1s ease-in-out infinite;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-      }
-      
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-    <script>
-      setTimeout(function() {
-        window.location.href = "samples.html";
-      }, 2000);
-    </script>
+    <title>Book Recommendations</title>
   </head>
   <body>
-    <div class="clock-loader"></div>
+    <nav id = "nav">
+      <img src = "/assets/images/PHOTO-2023-03-17-20-06-33-removebg-preview.png" alt = "logo" id = "logo" width="200px">
+      <ul>
+        <li><a href="/Dashboard/min_page.html">MY DASHBOARD</a></li>
+        <li><a href="search.html">SEARCH FOR BOOKS</a></li>
+        <li><a href="#">BOOK1</a></li>
+        <li><a href="#">BOOK2</a></li>
+        <li><a href="#">BOOK3</a></li>
+        <li><a href="#">BOOK4</a></li>
+        <li><a href="#">BOOK5</a></li>
+        <li><a href="/contact/userContact/contact.html">GIVE FEEDBACK</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="/Loginpage/login.html">LOGOUT</a></li>
+
+        <!-- <button id="dark-mode-toggle">Toggle Dark Mode</button> -->
+      </ul>
+    </nav>
+    <div class="footer" id ="fot">
+      <h3>Made by Divyansh, Minjun and Mustafa</h3>
+      <h4> © 2023 MMD BookHub. All rights reserved</h4>
+    </div>
+    <div class="book">
+      <img src="/assets/images/ind.jpg" alt="Book 1">
+      <h2>Book Title 1</h2>
+      <h3>by Author Name 1</h3>
+      <p>Summary of Book 1 goes here...</p>
+    </div>    
+    <style>
+      #fot {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 50px; /* Height of the footer */
+          background-color:  #333;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          }
+      @media only screen and (min-device-width: 480px){
+            #nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 200px;
+          background-color: #333;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+        }
+        nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        
+        nav ul li {
+          margin-bottom: 10px;
+        }
+        
+        nav ul li a {
+          display: block;
+          padding: 10px;
+          color: #fff;
+          text-decoration: none;
+        }
+        
+        nav ul li a:hover {
+          background-color: #fff;
+          color: #333;
+        }
+              
+              /* Style for the dark mode toggle button */
+              #dark-mode-toggle {
+                  /* position: fixed; */
+                  top: 20px;
+                  right: 20px;
+                  padding: 10px;
+                  background-color: #fff;
+                  color: #333;
+                  border: none;
+                  cursor: pointer;
+              }
+              
+              body.dark-mode {
+                  background-color: #333;
+                  color: #fff;
+              }}
+          @media only screen and (max-device-width: 480px) {
+        #nav {
+          top: 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #333;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+        }
+        #nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+          }
+          #logo {
+            /* font-size: 1.5em; */
+            height: 60px;
+          }
+        #nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          /* display: none; */
+        }
+        
+        #nav ul li {
+            margin-right: 5px;
+            padding: 0;
+        }
+        
+        #nav ul li a {
+          display: block;
+          padding: 10px;
+          color: #fff;
+          text-decoration: none;
+          /* align-items: center; */
+        }
+        
+        #nav ul li a:hover {
+          background-color: #fff;
+          color: #333;
+          font-size: 14px;
+        }
+        #nav .menu-icon {
+        display: block;
+      }
+        #dark-mode-toggle {
+                  /* position: fixed; */
+                  top: 20px;
+                  right: 20px;
+                  padding: 10px;
+                  background-color: #fff;
+                  color: #333;
+                  border: none;
+                  cursor: pointer;
+              }
+              
+              body.dark-mode {
+                  background-color: #333;
+                  color: #fff;
+              }
+        }
+        body {
+  background-image: url('https://cdn.wallpapersafari.com/23/71/OWBjGk.jpg');
+  color: #FFF;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.book {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 350px;
+}
+
+.book:hover img {
+  transform: scale(0.9);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.book img {
+  max-width: 70%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.book h2 {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.book h3, h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ae7e16;
+  transition: color 0.3s ease-in-out;
+}
+
+.book:hover h3, h2 {
+  color: #FFF;
+}
+
+.book p {
+  margin-top: 0;
+  font-size: 14px;
+  color: #b3b3b3;
+  transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.book:hover p {
+  font-size: 16px;
+  color: #FFF;
+}
+
+.book::after {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+
+    </style>
+    
   </body>
 </html>
