@@ -1,3 +1,10 @@
+// Get the email from the local storage
+const userEmail = localStorage.getItem('userEmail');
+
+// Display the email in the specified element
+if (userEmail) {
+  document.getElementById('user-email').textContent = `Logged in as: ${userEmail}`;
+}
 window.addEventListener('load', () => {
     var
       carousels = document.querySelectorAll('.carousel')
@@ -7,13 +14,6 @@ window.addEventListener('load', () => {
       carousel(carousels[i]);
     }
     });
-    
-    const toggleButton = document.getElementById('dark-mode-toggle');
-            const body = document.body;
-    
-            toggleButton.addEventListener('click', () => {
-                body.classList.toggle('dark-mode');
-            });
     
     function carousel(root) {
     var
@@ -32,8 +32,9 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', () => { 
       setupCarousel(n, parseFloat(getComputedStyle(images[0]).width)) 
     });
-    
+    rotateCarousel(currImage);
     setupNavigation();
+    addImageHoverListeners();
     
     function setupCarousel(n, s) {
       var	
@@ -76,9 +77,24 @@ window.addEventListener('load', () => {
       }
         
     }
+    function addImageHoverListeners() {
+      for (let i = 0; i < n; i++) {
+        images[i].addEventListener('mouseover', () => zoomImage(i, 1.1));
+        images[i].addEventListener('mouseout', () => zoomImage(i, 1));
+      }
+    }
     
+    function zoomImage(imageIndex, scale) {
+      const image = images[imageIndex];
+      image.style.transform = `rotateY(${imageIndex * theta}rad) scale(${scale})`;
+    }
     function rotateCarousel(imageIndex) {
       figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
+    
+      // Add these lines to update the image name
+      const imageNameElement = document.getElementById('image-name');
+      const imageName = images[imageIndex % n].alt;
+      imageNameElement.textContent = imageName;
     }
     
     }
