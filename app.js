@@ -12,10 +12,10 @@ loginForm.addEventListener('submit', (event) => {// Listen for the form submissi
   if(checkbox.checked){// Check if the email and password are correct (this is just an example)
   if (username === 'admin' && password === 'password') {
     // Redirect the user to the admin page
-    window.location.href = "/Admin_page/book.html";// Redirect the user to the admin page
+    window.location.href = "/book/book.html";// Redirect the user to the admin page
   } else {
     // Redirect the user to the main page
     localStorage.setItem('userName', username);// Redirect the user to the main page
-    window.location.href = 'index.html';// Redirect the user to the main page
+    window.location.href = '/Loginpage/loading.html';// Redirect the user to the main page
   }
 }});

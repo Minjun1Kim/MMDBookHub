@@ -5,6 +5,7 @@
   </head>
   <body>
     <h1 id="c">Update Book Form</h1>
+    <a href="/contact/adminContact/adContact.html">View Book Review</a>
     <form class="center">
       <label>ID:</label>
       <select id="id">
@@ -25,7 +26,10 @@
       <textarea id="summary"></textarea>
       <br>
       <label>Image:</label>
-      <input type="file" id="imageInput">
+      <div class="image-input-wrapper">
+        <input type="file" id="imageInput">
+        <button type="button" class="remove-image-btn" onclick="removeImage()">x</button>
+      </div>
       <br>
       <button type="button"id = "but" onclick="updateBook()">Update Book</button>
     </form>
@@ -38,6 +42,8 @@
       <li draggable="true" class="book">...</li>
       <li draggable="true" class="book">...</li>
     </ul></div>
+    <a href="/index.html">LOGOUT</a>
     <script src="book.js"></script>
+    <script src="/bookInterface.js"></script>
   </body>
 </html>

@@ -12,14 +12,14 @@
             <ul>
               <li><a href="/Dashboard/min_page.html">MY DASHBOARD</a></li>
               <li><a href="/Dashboard/search.html">SEARCH FOR BOOKS</a></li>
-              <li><a href="/Books/book1.html">BOOK1</a></li>
-              <li><a href="/Books/book2.html">BOOK2</a></li>
-              <li><a href="/Books/book3.html">BOOK3</a></li>
-              <li><a href="/Books/book4.html">BOOK4</a></li>
-              <li><a href="/Books/book5.html">BOOK5</a></li>
+              <li><a href="/Books/book1.html?id=1">BOOK1</a></li>
+              <li><a href="/Books/book1.html?id=2">BOOK2</a></li>
+              <li><a href="/Books/book1.html?id=3">BOOK3</a></li>
+              <li><a href="/Books/book1.html?id=4">BOOK4</a></li>
+              <li><a href="/Books/book1.html?id=5">BOOK5</a></li>
               <li><a href="/contact/userContact/contact.html">GIVE REVIEW</a></li>
               <li><a href="/Admin_page/feedback.html">VIEW BOOK REVIEWS</a></li>
-              <li><a href="/Loginpage/login.html">LOGOUT</a></li>
+              <li><a href="/index.html">LOGOUT</a></li>
     
               <!-- <button id="dark-mode-toggle">Toggle Dark Mode</button> -->
             </ul>
@@ -28,23 +28,24 @@
           <div class="carousel" data-gap="80">
             <figure>
               
-              <img src="/assets/images/uyghurHistory.jpg" alt="1. UyghurHistory">
-              <img src="/assets/images/kor.jpg" alt="2. Korean Book">
-              <img src="/assets/images/ind.jpg" alt="3. Indian Book">
-              
-              <img src="/assets/images/indianHistory.jpg" alt="4. Indian History">
-              <img src="/assets/images/koreanHistory.jpg" alt="5. Korean History">
             </figure>
             <nav>
               <button class="nav prev">Prev</button>
               <button class="nav next">Next</button>
             </nav>
-            <a href = "/Books/book1.html"><div id="image-name" class="caption-bar"></div></a>
-    </div>
+            <a id="image-name-link" href="/Books/book.html?id=1">
+              <div id="image-name" class="caption-bar"></div>
+              
+            </a>
+            
+          </div>
+
     <div class="footer" id ="fot">
         <h3>Made by Divyansh, Minjun and Mustafa</h3>
         <h4> © 2023 MMD BookHub. All rights reserved</h4>
       </div>
       <script src="allbooks.js"></script>
+      <script src="/bookInterface.js"></script>
+      <script src="/bookLink.js"></script>
   </body>
 </html>

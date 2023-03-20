@@ -5,6 +5,10 @@ const userEmail = localStorage.getItem('userEmail');
 if (userEmail) {
   document.getElementById('user-email').textContent = `Logged in as: ${userEmail}`;
 }
+
+
+loadBookImages();
+
 window.addEventListener('load', () => {
     var
       carousels = document.querySelectorAll('.carousel')
@@ -88,13 +92,43 @@ window.addEventListener('load', () => {
       const image = images[imageIndex];
       image.style.transform = `rotateY(${imageIndex * theta}rad) scale(${scale})`;
     }
+
     function rotateCarousel(imageIndex) {
       figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
     
-      // Add these lines to update the image name
       const imageNameElement = document.getElementById('image-name');
+      const imageLink = document.getElementById('image-name-link');
       const imageName = images[imageIndex % n].alt;
       imageNameElement.textContent = imageName;
-    }
+    
+      imageLink.href = `/Books/book1.html?id=${bookArray[imageIndex % n].id}`;
     
     }
+    
+
+  }
+
+  function loadBookImages() {
+    const bookArrayJSON = localStorage.getItem('bookArray');
+    if (!bookArrayJSON) return;
+  
+    const bookArray = JSON.parse(bookArrayJSON);
+    const figureElement = document.querySelector('.carousel figure');
+  
+    let loadedImagesCount = 0;
+  
+    for (const book of bookArray) {
+      const img = document.createElement('img');
+      img.src = book.image;
+      img.alt = `${book.id}. ${book.title}`;
+      img.onload = () => {
+        loadedImagesCount++;
+        if (loadedImagesCount === bookArray.length) {
+          rotateCarousel(0);
+        }
+      };
+      figureElement.appendChild(img);
+    }
+  }
+  
+    
